@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="9lab.css">
+    <link rel="stylesheet" href="print.css" media="print">
+    <title>Modern Design Example</title>
+    <style>
+        /* Add some styles for the homeModal */
+        #homeModal {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Kosmonautas Vilius</h1>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#" onclick="showModal('homeModal')">Home</a></li>
+                <li><a href="#" onclick="showModal('aboutModal')">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Sveiki atvykę į Viliaus nuostabųjį puslapį!</h2>
+                <p>Esu antro kurso studentas, tad daug nesitikėkite!</p>
+            </div>
+            <div class="col">
+                <h2>Ačiū, kad žiūrite!</h2>
+                <p>Gero naudojimo</p>
+            </div>
+        </div>
+
+        <h2>Kosmosas</h2>
+        <table class="image-table">
+            <tr>
+                <td><img src="image1.jpg" alt="Image 1" onclick="showText('wow koks grožis')"></td>
+                <td><img src="image2.jpg" alt="Image 2" onclick="showText('nu čia tai labai jau įspūdinga')"></td>
+            </tr>
+            <tr>
+                <td><img src="image3.jpg" alt="Image 3" onclick="showText('nu kosmosas kaip gražu')"></td>
+                <td><img src="image4.jpg" alt="Image 4" onclick="showText('neturiu žodžių, kaip...')"></td>
+            </tr>
+        </table>
+
+        <div id="centerText" class="center" onclick="hideText()">Click me to return to the top!</div>
+
+        <!-- Home Modal -->
+        <div id="homeModal">
+            <span class="close" onclick="closeModal('homeModal')">&times;</span>
+            <p>Nežinau ką tikitės čia rasti, bet čia nieko nėra, o toliau išvis nieko nebus</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Visos teisės saugomos Viliaus galvoje, prašome nevogti mano genialių dizainų</p>
+        </div>
+    </footer>
+
+    <script>
+        function showModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "none";
+        }
+
+        function showText(text) {
+            var centerText = document.getElementById('centerText');
+            centerText.innerHTML = text;
+            centerText.style.display = "block";
+        }
+
+        function hideText() {
+            var centerText = document.getElementById('centerText');
+            centerText.style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

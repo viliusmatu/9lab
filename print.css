@@ -1,0 +1,67 @@
+/* print.css */
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container {
+    max-width: 100%;
+}
+
+.image-table {
+    width: 100%;
+}
+
+.image-table td {
+    padding: 1em;
+}
+
+.image-table img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.modal-content {
+    max-width: 100%;
+}
+
+footer {
+    page-break-before: always;
+}
+
+@media print {
+    body {
+        color: black;
+    }
+
+    header,
+    nav,
+    section,
+    footer {
+        display: block;
+        page-break-inside: avoid;
+    }
+
+    .modal {
+        display: none;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    .row {
+        display: block;
+    }
+
+    .col {
+        flex-basis: 100%;
+        margin-bottom: 2em;
+    }
+
+    h2 {
+        border-bottom: none;
+    }
+}
